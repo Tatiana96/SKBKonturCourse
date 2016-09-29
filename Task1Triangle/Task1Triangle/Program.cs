@@ -45,7 +45,7 @@ namespace Task1Triangle
             return new Triangle(requiredSides[0], requiredSides[1], knownSide);
         } // создание треугольника по стороне и углу
 		
-		public double GetAreaOfTriangle() {
+	public double GetAreaOfTriangle() {
             return MathCalculation.UseHeronFormula(Side1, Side2, Side3);
         } // возвращение площади треугольника
 
