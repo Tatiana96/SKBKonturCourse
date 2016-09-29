@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1Triangle", "Task1Triangle\Task1Triangle.csproj", "{B61FC681-7538-4184-8AF6-07D704B3B3A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriangleCalculation", "MathCalculation\TriangleCalculation.csproj", "{8252C5C9-CD91-4003-AA99-72D00BE2E436}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriangleTest", "TriangleTest\TriangleTest.csproj", "{49FBC07E-1756-4C5F-B2E8-A9D842171059}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B61FC681-7538-4184-8AF6-07D704B3B3A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B61FC681-7538-4184-8AF6-07D704B3B3A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B61FC681-7538-4184-8AF6-07D704B3B3A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B61FC681-7538-4184-8AF6-07D704B3B3A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8252C5C9-CD91-4003-AA99-72D00BE2E436}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8252C5C9-CD91-4003-AA99-72D00BE2E436}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8252C5C9-CD91-4003-AA99-72D00BE2E436}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8252C5C9-CD91-4003-AA99-72D00BE2E436}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49FBC07E-1756-4C5F-B2E8-A9D842171059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49FBC07E-1756-4C5F-B2E8-A9D842171059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49FBC07E-1756-4C5F-B2E8-A9D842171059}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49FBC07E-1756-4C5F-B2E8-A9D842171059}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
