@@ -44,6 +44,10 @@ namespace Task1Triangle
             requiredSides = MathCalculation.UseSinesTheorem(knownSide, angle1, angle2);
             return new Triangle(requiredSides[0], requiredSides[1], knownSide);
         } // создание треугольника по стороне и углу
+		
+		public double GetAreaOfTriangle() {
+            return MathCalculation.UseHeronFormula(Side1, Side2, Side3);
+        } // возвращение площади треугольника
 
     }
     class Program
