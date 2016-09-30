@@ -54,10 +54,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MathCalculation\TriangleCalculation.csproj">
-      <Project>{8252c5c9-cd91-4003-aa99-72d00be2e436}</Project>
-      <Name>TriangleCalculation</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Task1Triangle\Task1Triangle.csproj">
       <Project>{b61fc681-7538-4184-8af6-07d704b3b3a0}</Project>
       <Name>Task1Triangle</Name>

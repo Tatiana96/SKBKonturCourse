@@ -1,60 +1,56 @@
 ﻿using System;
-using TriangleCalculation;
 using Task1Triangle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TriangleTest
 {
     [TestClass]
-    public class TriangleClassTest
+    public class TriangleTest
     {
         [TestMethod]
-        public void testTranslationFromDegreesToRadianForCorrectCalculation()
+        [ExpectedException(typeof(ArgumentException), "A triangle is not valid with the arguments like these.")]
+        public void CreateFromThreeSides_InvalidSides_ArgumentException()
         {
             // Arrange:
-            double angle = 60;
+            double side1 = 50;
+            double side2 = 70;
+            double side3 = 10;
 
             // Act:
-            var result = MathCalculation.DegreesToRadian(angle);
+            var result = Triangle.CreateFromThreeSides(side1, side2, side3);
 
-            // Assert:
-            Assert.AreEqual(1, result, 10e-2);
-        } // тестирование перевода градусов в радианы
+        }
 
         [TestMethod]
-        public void testUsingCosineTheoremForCorrectCalculation()
+        [ExpectedException(typeof(ArgumentException), "Triangle parameters cannot be negative or null.")]
+        public void CreateFromTwoSidesAndAngle_InvalidAngle_ArgumentException()
         {
             // Arrange:
             double side1 = 3;
             double side2 = 4;
-            double angle = 90;
+            double angle1 = 0;
 
             // Act:
-            var result = MathCalculation.UseСosineTheorem(side1, side2, angle);
+            var result = Triangle.CreateFromTwoSidesAndAngle(side1, side2, angle1);
 
-            // Assert:
-            Assert.AreEqual(5, result);
-        } // тестирование теоремы косинусов
+        }
 
         [TestMethod]
-        public void testUsingSinesTheoremForCorrectCalculation()
+        [ExpectedException(typeof(ArgumentException), "Triangle parameters cannot be negative or null.")]
+        public void CreateFromSideAndTwoAngles_InvalidAnglesAndSides_ArgumentException()
         {
             // Arrange:
-            double knownSide = 5;
-            double angle1 = 60;
-            double angle2 = 60;
+            double side1 = -10;
+            double angle1 = 800;
+            double angle2 = -15;
 
             // Act:
-            var result = MathCalculation.UseSinesTheorem(knownSide, angle1, angle2);
+            var result = Triangle.CreateFromSideAndTwoAngles(side1, angle1, angle2);
 
-            // Assert:
-            Assert.AreEqual(2, result.Length);
-            Assert.AreEqual(5, result[0], 10e-1);
-            Assert.AreEqual(5, result[1], 10e-1);
-        } // тестирование теоремы синусов
+        }
 
         [TestMethod]
-        public void testUsingHeronFormulaForCorrectCalculation()
+        public void GetArea_CorrectSides_AreaEquals10()
         {
             // Arrange:
             double side1 = 4;
@@ -62,29 +58,47 @@ namespace TriangleTest
             double side3 = 6;
 
             // Act:
-            var result = MathCalculation.UseHeronFormula(side1, side2, side3);
+            Triangle triangleObj = Triangle.CreateFromThreeSides(side1, side2, side3);
+            var result = triangleObj.GetArea();
 
             // Assert:
-            Assert.AreEqual(10, result, 10e-2);
+            Assert.AreEqual(10, result, 10e-1);
+
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException), "A triangle is not valid with the arguments like these.")]
-        public void testTriangleIsExistIfArgumentException()
+        public void GetArea_CorrectSides_AreaEquals6()
         {
             // Arrange:
-            double angle1 = 800;
-            double angle2 = 500;
-            double side1 = -1;
-            double side2 = 150;
-            double side3 = 0;
+            double side1 = 3;
+            double side2 = 4;
+            double angle1 = 90;
 
             // Act:
-            var result0 = Triangle.ObjectFromThreeSides(side1, side2, side3);
-            var result1 = Triangle.ObjectFromTwoSidesAndAngle(side1, side2, angle1);
-            var result2 = Triangle.ObjectFromSideAndTwoAngles(side3, angle1, angle2);
+            Triangle triangleObj = Triangle.CreateFromTwoSidesAndAngle(side1, side2, angle1);
+            var result = triangleObj.GetArea();
 
-        } // тест создания треугольника с некорректными данными
-      }
+            // Assert:
+            Assert.AreEqual(6, result);
+
+        }
+
+        [TestMethod]
+        public void GetArea_CorrectSides_AreaEquals28()
+        {
+            // Arrange:
+            double side1 = 8;
+            double angle1 = 60;
+            double angle2 = 60;
+
+            // Act:
+            Triangle triangleObj = Triangle.CreateFromSideAndTwoAngles(side1, angle1, angle2);
+            var result = triangleObj.GetArea();
+
+            // Assert:
+            Assert.AreEqual(27, result, 10e-1);
+
+        }
+    }
 
 }
