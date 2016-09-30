@@ -40,7 +40,7 @@ namespace Task1Triangle
             {
                 throw new ArgumentException("Triangle parameters cannot be negative or null.");
             }
-            double side3 = UseСosineTheorem(side1, side2, angle1);
+            double side3 = GetSideUsingСosineTheorem(side1, side2, angle1);
             return new Triangle(side1, side2, side3);
         }
 
@@ -51,13 +51,15 @@ namespace Task1Triangle
                 throw new ArgumentException("Triangle parameters cannot be negative or null.");
             }
             double[] requiredSides;
-            requiredSides = UseSinesTheorem(side1, angle1, angle2);
+            requiredSides = GetTwoSidesUsingSinesTheorem(side1, angle1, angle2);
             return new Triangle(side1, requiredSides[0], requiredSides[1]);
         }
 		
 		public double GetArea()
         {
-            return UseHeronFormula(Side1, Side2, Side3);
+            double semiperimeter = (Side1 + Side2 + Side3) / 2;
+            double area = Math.Sqrt(semiperimeter * (semiperimeter - Side1) * (semiperimeter - Side2) * (semiperimeter - Side3));
+            return area;
         }
 
         private static bool TriangleExists(double side1, double side2, double side3)
@@ -80,13 +82,13 @@ namespace Task1Triangle
             return (Degrees * Math.PI) / 180;
         }
 
-        private static double UseСosineTheorem(double side1, double side2, double angle1)
+        private static double GetSideUsingСosineTheorem(double side1, double side2, double angle1)
         {
             double side3 = Math.Sqrt(Math.Pow(side1, 2) + Math.Pow(side2, 2) - 2 * Math.Cos(DegreesToRadian(angle1)));
             return side3;
         }
 
-        private static double[] UseSinesTheorem(double side1, double angle1, double angle2)
+        private static double[] GetTwoSidesUsingSinesTheorem(double side1, double angle1, double angle2)
         {
             double angle3;
             angle3 = 180 - (angle1 + angle2);
@@ -96,13 +98,6 @@ namespace Task1Triangle
             otherSides[1] = side1 * (Math.Sin(DegreesToRadian(angle2)) / Math.Sin(DegreesToRadian(angle3))); // находим третью сторону
 
             return otherSides;
-        }
-
-        private static double UseHeronFormula(double side1, double side2, double side3)
-        {
-            double semiperimeter = (side1 + side2 + side3) / 2;
-            double area = Math.Sqrt(semiperimeter * (semiperimeter - side1) * (semiperimeter - side2) * (semiperimeter - side3));
-            return area;
         }
 
     }
