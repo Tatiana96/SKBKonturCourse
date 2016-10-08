@@ -6,27 +6,28 @@ using System.Threading.Tasks;
 
 namespace Task2FifteenPuzzle
 {
-    class ImmutableGameDecorator : ImmutableGame
+    public class ImmutableGameDecorator : ImmutableGame
     {
         private ImmutableGame ImmutableGameInitialVersion;
         private ImmutableGame ImmutableGameChangedVersion;
         private Stack<int> ShiftedMatrixValuesStack;
-        public ImmutableGameDecorator(ImmutableGame immutableGame)
+
+        public ImmutableGameDecorator(ImmutableGame immutableGame) : base(immutableGame)
         {
             ImmutableGameInitialVersion = immutableGame;
             ImmutableGameChangedVersion = immutableGame;
 
             ShiftedMatrixValuesStack = new Stack<int>();
         }
-        public int this[int x, int y]
+        public override int this[int x, int y]
         {
             get { return ImmutableGameChangedVersion[x, y]; }
         }
-        public Index GetLocation(int value)
+        public override Index GetLocation(int value)
         {
             return ImmutableGameChangedVersion.GetLocation(value);
         }
-        public ImmutableGameDecorator Shift(int value)
+        public override IGame Shift(int value)
         {
             ImmutableGameChangedVersion = (ImmutableGame)ImmutableGameChangedVersion.Shift(value);
             ShiftedMatrixValuesStack.Push(value);

@@ -59,7 +59,7 @@ namespace Task2FifteenPuzzle
             MatrixIndexArray = (Index[])gameObject.MatrixIndexArray.Clone();          
         }
 
-        public int this[int x, int y]
+        public virtual int this[int x, int y]
         {
             get
             {
@@ -68,10 +68,10 @@ namespace Task2FifteenPuzzle
                 else
                     return MatrixValues[x, y];
             }
-            set { ; }
+            private set { ; }
         }
 
-        public Index GetLocation(int requiredValue)
+        public virtual Index GetLocation(int requiredValue)
         {
             if (requiredValue >= 0 && requiredValue >= MatrixIndexArray.Length)
                 throw new ArgumentException("Invalid value of tile position: it is outside of field.");

@@ -53,6 +53,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="GameTests.cs" />
+    <Compile Include="ImmutableGameDecoratorTest.cs" />
     <Compile Include="ImmutableGameTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

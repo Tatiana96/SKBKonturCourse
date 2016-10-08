@@ -10,6 +10,6 @@ namespace Task2FifteenPuzzle
     {
         Index GetLocation(int value);
         IGame Shift(int value);
-        int this[int x, int y] { get; set; }
+        int this[int x, int y] { get; }
     }
 }
