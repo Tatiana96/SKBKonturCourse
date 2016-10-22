@@ -10,7 +10,6 @@ namespace GenericsTask
     {
         public static ProcessorCreator<TEngine> CreateEngine<TEngine>()
         {
-            Console.WriteLine("CreateEngine");
             return new ProcessorCreator<TEngine>();
         }
     }
