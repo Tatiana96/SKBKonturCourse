@@ -14,6 +14,7 @@ namespace GenericsTask
             return new ProcessorCreator<TEngine>();
         }
     }
+    
     class ProcessorCreator<TEngine>
     {
         public ProcessorCreator<TEngine, TEntity> For<TEntity>()
@@ -21,6 +22,7 @@ namespace GenericsTask
             return new ProcessorCreator<TEngine, TEntity>();
         }
     }
+    
     class ProcessorCreator<TEngine, TEntity>
     {
         public Processor<TEngine, TEntity, TLogger> With<TLogger>()
@@ -28,4 +30,5 @@ namespace GenericsTask
             return new Processor<TEngine, TEntity, TLogger>();
         }
     }
+    
 }
