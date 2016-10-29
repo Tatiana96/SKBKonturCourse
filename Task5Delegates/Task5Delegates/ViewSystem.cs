@@ -12,12 +12,12 @@ namespace Task5Delegates
     {
         private IReadOnlyList<IReadOnlyList<int>> cellsValues;
 
-        public ViewSystem(IReadOnlyList<IReadOnlyList<int>> cellsValues)
+        public ViewSystem(IReadOnlyList< IReadOnlyList<int> > cellsValues)
         {
             this.cellsValues = cellsValues;
         }
 
-        public void Update(IReadOnlyList<IReadOnlyList<int>> cellsValues)
+        public void Update(IReadOnlyList< IReadOnlyList<int> > cellsValues)
         {
             try
             {
