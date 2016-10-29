@@ -20,9 +20,7 @@ namespace Task5Delegates
 
         public void Update(IReadOnlyList<IReadOnlyList<int>> cellsValues)
         {
-
             this.cellsValues = cellsValues;
-
         }
 
     }
