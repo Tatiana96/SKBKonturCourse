@@ -28,8 +28,8 @@ namespace Application
                 }
             }
 
-            Expression<Func<double, double>> expressionExample = x => Math.Sin(5 * (x + 8));
-            Console.WriteLine(Differentiator.Differentiate(expressionExample));
+            Expression<Func<double, double>> expressionExample = x => Math.Sin( 5 * (x + 8) );
+            Console.WriteLine( Differentiator.Differentiate(expressionExample) );
         }
     }
 }
