@@ -43,7 +43,6 @@ namespace Task7StorageControl
         public void Dispose()
         {
             Dispose(true);
-            GC.SuppressFinalize(this);
         }
 
         protected virtual void Dispose(bool fromFinalize)
